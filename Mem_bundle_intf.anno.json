@@ -1,0 +1,18 @@
+[
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~Mem_bundle_intf|Mem_bundle_intf>io_data_out",
+    "sources":[
+      "~Mem_bundle_intf|Mem_bundle_intf>io_wr_en",
+      "~Mem_bundle_intf|Mem_bundle_intf>io_addr"
+    ]
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"."
+  }
+]
