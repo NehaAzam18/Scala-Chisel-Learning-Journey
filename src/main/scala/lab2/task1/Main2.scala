@@ -18,7 +18,8 @@ val out = Output ( UInt () )
 // 2 to 1 Mux implementation
 class Main2 extends Module {
 val io = IO ( new Mux_2to1IO )
+val sel = Fill(32, io.select)
 // update the output
 //io . out := Mux ( io . select , io . in_A , io . in_B )
-io . out := io . in_A & io . select | io . in_B & (~ io . select )
+io . out := io . in_A & (~sel) | io . in_B & sel
 }
