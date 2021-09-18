@@ -11,17 +11,6 @@
     ]
   },
   {
-    "class":"firrtl.transforms.CombinationalPath",
-    "sink":"~mux_onehot_4to1|mux_onehot_4to1>io_out2",
-    "sources":[
-      "~mux_onehot_4to1|mux_onehot_4to1>io_in3",
-      "~mux_onehot_4to1|mux_onehot_4to1>io_in2",
-      "~mux_onehot_4to1|mux_onehot_4to1>io_sel",
-      "~mux_onehot_4to1|mux_onehot_4to1>io_in0",
-      "~mux_onehot_4to1|mux_onehot_4to1>io_in1"
-    ]
-  },
-  {
     "class":"firrtl.EmitCircuitAnnotation",
     "emitter":"firrtl.VerilogEmitter"
   },

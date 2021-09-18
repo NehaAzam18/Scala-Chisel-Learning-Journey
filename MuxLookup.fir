@@ -19,5 +19,5 @@ circuit MuxLookup :
     node _io_out_T_11 = mux(_io_out_T_10, io.in6, _io_out_T_9) @[Mux.scala 80:57]
     node _io_out_T_12 = eq(UInt<3>("h07"), io.sel) @[Mux.scala 80:60]
     node _io_out_T_13 = mux(_io_out_T_12, io.in7, _io_out_T_11) @[Mux.scala 80:57]
-    io.out <= _io_out_T_13 @[Main.scala 114:10]
+    io.out <= _io_out_T_13 @[Main.scala 121:10]
     

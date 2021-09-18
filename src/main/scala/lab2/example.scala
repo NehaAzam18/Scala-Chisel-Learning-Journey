@@ -7,7 +7,7 @@ class example extends Module{
         val y = Input(UInt(32.W))
         val sum = Output(UInt(32.W))
     })
-    io.sum := io.x + io.y
+    // io.sum := io.x + io.y
     
     io.sum := io.x+%io.y
 

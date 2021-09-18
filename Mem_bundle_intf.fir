@@ -5,14 +5,14 @@ circuit Mem_bundle_intf :
     input reset : UInt<1>
     output io : {flip data_in : UInt<32>[4], flip data_selector : UInt<2>, data_out : UInt<32>, flip addr : UInt<5>, flip wr_en : UInt<1>}
     
-    io.data_out <= UInt<1>("h00") @[Main.scala 161:15]
-    cmem memory : UInt<32>[32] @[Main.scala 163:18]
-    when io.wr_en : @[Main.scala 164:21]
+    io.data_out <= UInt<1>("h00") @[Main.scala 167:15]
+    cmem memory : UInt<32>[32] @[Main.scala 169:18]
+    when io.wr_en : @[Main.scala 170:21]
       write mport MPORT = memory[io.addr], clock
       MPORT <= io.data_in[io.data_selector]
-      skip @[Main.scala 164:21]
-    else : @[Main.scala 168:14]
-      read mport io_data_out_MPORT = memory[io.addr], clock @[Main.scala 170:32]
-      io.data_out <= io_data_out_MPORT @[Main.scala 170:15]
-      skip @[Main.scala 168:14]
+      skip @[Main.scala 170:21]
+    else : @[Main.scala 174:14]
+      read mport io_data_out_MPORT = memory[io.addr], clock @[Main.scala 176:32]
+      io.data_out <= io_data_out_MPORT @[Main.scala 176:15]
+      skip @[Main.scala 174:14]
     
