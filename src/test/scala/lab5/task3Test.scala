@@ -1,4 +1,4 @@
-package lab3
+package lab5
 import org.scalatest._
 import chiseltest._
 import chisel3._
@@ -7,16 +7,14 @@ import chiseltest.experimental.TestOptionBuilder._
 // import chiseltest.internal.VerilatorBackendAnnotationAnnotation
 
 class task3Test extends FreeSpec with ChiselScalatestTester{
-  "branchControl test" in {
-    test(new task3()){ c =>
-        c.io.fnct3.poke("b001".U)
-        c.io.arg_x.poke(3.U)
-        c.io.arg_y.poke(3.U)
-        c.io.branch.poke(1.B)
-        c.io.br_taken.expect(0.B)
+  "operatorOperation test" in {
+    test(new task3(2 , UInt(16. W ))( _ + _ ) ) { c =>
+        c.io.in(0).poke( 2.U)
+        c.io.in(1).poke( 2.U)
+        //c.io.in2.poke(1.S)
+        c.io.out(0).expect(4.U)
+        c.io.out(1).expect(4.U)
         c.clock.step(1)
     }
   }
 }
-
-

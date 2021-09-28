@@ -1,4 +1,4 @@
-package lab3
+package lab6
 import org.scalatest._
 import chiseltest._
 import chisel3._
@@ -6,13 +6,11 @@ import chisel3._
 import chiseltest.experimental.TestOptionBuilder._
 // import chiseltest.internal.VerilatorBackendAnnotationAnnotation
 
-class task4Test extends FreeSpec with ChiselScalatestTester{
-  "ImmdValGen test" in {
-    test(new task4()){ c =>
-        c.io.instr.poke("h00800513".U)
-        c.io.immd_sel.expect(8.U)
+class task6Test extends FreeSpec with ChiselScalatestTester{
+  "Counterr test" in {
+    test(new task6(4)){ c =>
+        c.io.out.expect(0.U)
         c.clock.step(1)
     }
   }
 }
-

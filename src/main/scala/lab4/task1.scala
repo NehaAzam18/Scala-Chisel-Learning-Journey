@@ -1,4 +1,4 @@
-package lab3
+package lab4
 import chisel3 . _
 import chisel3 . util . _
 class LM_IO_Interface_BranchControl extends Bundle {
@@ -8,7 +8,7 @@ val arg_x = Input ( UInt (32. W ) )
 val arg_y = Input ( UInt (32. W ) )
 val br_taken = Output ( Bool () )
 }
-class task3 extends Module {
+class task1 extends Module {
     val io = IO ( new LM_IO_Interface_BranchControl )
     //var br = 0.B
     val br = Wire(Bool())

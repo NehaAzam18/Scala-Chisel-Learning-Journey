@@ -1,4 +1,4 @@
-package lab3
+package lab4
 import chisel3 . _
 import chisel3 . util . _
 import ALUOP . _
@@ -30,7 +30,7 @@ val alu_Op = Input ( UInt ( ALUOP_SIG_LEN . W ) )
 val out = Output ( UInt ( WLEN . W ) )
 val sum = Output ( UInt ( WLEN . W ) )
 }
-class task2 extends Module with Config {
+class ALU extends Module with Config {
 val io = IO ( new ALUIO )
 val sum = io . in_A + Mux ( io . alu_Op (0) , - io . in_B , io . in_B )
 val cmp = Mux ( io . in_A ( WLEN -1) === io . in_B ( WLEN -1) , sum ( WLEN -1) ,
